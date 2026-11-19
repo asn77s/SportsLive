@@ -28,3 +28,8 @@ body:has(#front:not([hidden])) main{padding-top:0}
 @media(max-width:550px){.minis{grid-template-columns:1fr}.spread aside .match-art{width:42%}}
 
 .player-pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:8px 0;background:#c7baa7;border-block:1px solid #756456}.player-pair figure{margin:0;text-align:center;background:radial-gradient(ellipse at bottom,#c7bca7,#f3ecde 80%)}.player-pair figure img{display:block;width:100%;aspect-ratio:1.5;object-fit:contain;filter:grayscale(1) contrast(1.18);mix-blend-mode:multiply}.player-pair figcaption{padding:4px;font:italic 15px Georgia,serif;color:#41151a}
+
+.days {display:grid;grid-template-columns:auto minmax(0,1fr) auto auto}
+#date-strip {display:flex;overflow-x:auto;gap:.3rem;scrollbar-width:thin}
+#date-strip button {flex:1 0 auto;white-space:nowrap}
+@media(max-width:900px){.days{grid-template-columns:auto minmax(0,1fr) auto}.days label{grid-row:2;grid-column:1/-1;text-align:center}.days [data-step="1"]{grid-column:3;grid-row:1}}
