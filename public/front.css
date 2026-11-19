@@ -1,0 +1,23 @@
+[hidden]{display:none!important}
+body:has(#front:not([hidden])){background:#f6eedf}
+body:has(#front:not([hidden])) .mast,body:has(#front:not([hidden])) main{max-width:1500px;padding-inline:clamp(14px,2.4vw,42px)}
+body:has(#front:not([hidden])) main{padding-top:0}
+.edition,#front small,#front h2 span{font:bold 12px Georgia,serif;letter-spacing:.22em;text-transform:uppercase}
+.edition{margin-right:auto;margin-left:24px;padding:12px 24px;border-left:1px solid #850e22}
+.sportlinks{display:flex;border-block:2px solid #790e20;padding:5px 0}
+.sportlinks button{flex:1;font:bold clamp(16px,2.3vw,34px) Georgia;border-right:1px solid #a87862;padding:4px}
+.sportlinks button:first-child,.sportlinks button:hover{background:#780f1e;color:#fff7e8}
+.spread{display:grid;grid-template-columns:minmax(0,3fr) minmax(215px,1fr);gap:16px;padding:16px 0}
+.lead{position:relative;isolation:isolate;min-height:clamp(340px,39vw,590px);display:flex;align-items:stretch}
+.lead img{position:absolute;inset:0 0 0 auto;width:57%;height:100%;object-fit:cover;mask-image:linear-gradient(90deg,transparent,#000 24%);z-index:-1}
+.leadcopy{width:60%;padding:12px 0}
+#front small,#front em{color:#780e20}
+#front h1{font:bold clamp(43px,6.3vw,106px)/.95 Georgia;letter-spacing:-.065em;margin:18px 0}
+#front em{font-size:14px}.lines{border-block:1px solid #514036}.lead .lines{width:80%;margin-top:14px}
+.lines div{display:flex;justify-content:space-between;align-items:center;padding:4px 0;gap:10px;font-weight:bold;font-size:clamp(21px,2.4vw,38px)}.lines div+div{border-top:1px solid #8c7969}
+.lines strong{background:#770e1b;color:#fff5e8;min-width:1.8em;text-align:center}
+.minis{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:2px solid #780f1e;padding-top:14px}.minis .lines{margin:10px 0 4px}
+.spread aside{border-left:1px solid #615145;padding-left:12px}
+#front h2{display:flex;justify-content:space-between;align-items:center;margin:0;background:#780e20;color:#fff6e8;padding:5px 10px;font:italic bold clamp(22px,2.4vw,38px) Georgia}
+.spread aside p{font:bold clamp(17px,1.6vw,25px) Georgia;margin:0;padding:10px 4px;border-bottom:1px solid #a59583}.spread aside p em{display:block;font-weight:normal;margin-top:4px}.spread aside i{color:#780e20}.spread aside img{width:100%;max-height:175px;object-fit:cover;margin-top:8px}
+@media(max-width:720px){.edition{display:none}.spread{grid-template-columns:1fr}.spread aside{border:0;padding:0}.lead{min-height:300px}.sportlinks button{font-size:clamp(13px,3.5vw,19px)}#front small{font-size:10px;letter-spacing:.12em}.minis{gap:12px}.leadcopy{width:61%}#front h1{font-size:clamp(38px,9vw,62px)}}

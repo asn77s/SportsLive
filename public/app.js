@@ -2,6 +2,7 @@ const byId = id => document.getElementById(id);
 const today = easternToday();
 let selected = today;
 let newsType = '';
+let frontPage = true;
 let soccerMode = 'Demo';
 let revision = 0;
 const expanded = new Set(['Basketball']);
@@ -70,6 +71,14 @@ function showPanel(panel,sport) {
 }
 function render() {
   revision++;
+  byId('front').hidden = !frontPage;
+  document.querySelector('.days').hidden = frontPage;
+  byId('dateline').hidden = frontPage;
+  if (frontPage) {
+    byId('board').hidden = true;
+    byId('press').hidden = true;
+    return;
+  }
   byId('date').value = selected;
   byId('dateline').textContent = new Date(selected+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})+' · All times Eastern';
   document.querySelectorAll('[data-day]').forEach(b => b.setAttribute('aria-pressed',moveDay(today,Number(b.dataset.day)) === selected));
@@ -113,8 +122,8 @@ byId('sport').append(...Object.keys(sports).map(option));
 updateTeams();
 byId('sport').onchange = () => { updateTeams(); showNews(); };
 byId('team').onchange = showNews;
-byId('scores').onclick = () => { newsType=''; byId('menu').open=false; render(); };
-document.querySelectorAll('[data-news]').forEach(b => b.onclick = () => { newsType=b.dataset.news; byId('menu').open=false; render(); });
+byId('scores').onclick = () => { frontPage=false; newsType=''; byId('menu').open=false; render(); };
+document.querySelectorAll('[data-news]').forEach(b => b.onclick = () => { frontPage=false; newsType=b.dataset.news; byId('menu').open=false; render(); });
 document.querySelectorAll('[data-day]').forEach(b => b.onclick = () => { selected=moveDay(today,Number(b.dataset.day)); render(); });
 document.querySelectorAll('[data-step]').forEach(b => b.onclick = () => { selected=moveDay(selected,Number(b.dataset.step)); render(); });
 byId('date').onchange = event => { if (event.target.value) selected=event.target.value; render(); };
@@ -122,3 +131,11 @@ setInterval(() => {
   if (!document.hidden && !newsType && soccerMode === 'Live scores' && expanded.has('Soccer') && selected === easternToday()) render();
 },60000);
 render();
+
+document.querySelectorAll('[data-open]').forEach(button => {
+  button.onclick = () => {
+    expanded.clear();
+    expanded.add(button.dataset.open);
+    byId('scores').click();
+  };
+});
