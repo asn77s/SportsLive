@@ -1,5 +1,7 @@
 # SportsLive
 
+**[Open the SportsLive website](https://sports-live-ten.vercel.app/)**
+
 Adrian Nogueira · solo class project
 
 SportsLive shows daily matchups for soccer, American football, basketball, UFC and boxing. Select Scores, choose a day, then expand a sport. Basketball opens with sample data. Soccer includes the Premier League, La Liga, Serie A, Bundesliga and Ligue 1. Its Live scores selector requests ESPN data through Express. Today's live soccer view refreshes every minute while visible. Live coverage depends on the provider.
@@ -21,4 +23,4 @@ Open http://localhost:3000. Expand Soccer and switch Demo to Live scores. Server
 
 ## Deployment
 
-Import this GitHub repository into a personal Vercel Hobby project, select Express and use the repository root. The public deployment URL is pending verification.
+Import this GitHub repository into a personal Vercel Hobby project, select Express and use the repository root. The production site is https://sports-live-ten.vercel.app/.

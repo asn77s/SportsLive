@@ -26,3 +26,5 @@ body:has(#front:not([hidden])) main{padding-top:0}
 .art-0{background-position:left top}.art-1{background-position:right top}.art-2{background-position:left center}.art-3{background-position:right center}.art-4{background-position:left bottom}.art-5{background-position:right bottom}
 .minis .match-art{margin-top:8px}.spread aside .match-art{float:left;width:36%;margin:0 10px 5px 0}.spread aside p{display:flow-root}
 @media(max-width:550px){.minis{grid-template-columns:1fr}.spread aside .match-art{width:42%}}
+
+.player-pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:8px 0;background:#c7baa7;border-block:1px solid #756456}.player-pair figure{margin:0;text-align:center;background:radial-gradient(ellipse at bottom,#c7bca7,#f3ecde 80%)}.player-pair figure img{display:block;width:100%;aspect-ratio:1.5;object-fit:contain;filter:grayscale(1) contrast(1.18);mix-blend-mode:multiply}.player-pair figcaption{padding:4px;font:italic 15px Georgia,serif;color:#41151a}
